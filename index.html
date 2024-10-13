@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+      <script>
+        // Automatically load home2.html when index.html loads
+        window.onload = function() {
+            fetch('home2.html')
+                .then(response => response.text())
+                .then(html => {
+                    // Replace the entire document's body with home2.html content
+                    document.open();
+                    document.write(html);
+                    document.close();
+                })
+                .catch(error => {
+                    console.error('Error loading home2.html:', error);
+                });
+        };
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Fables">
